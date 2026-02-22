@@ -3,10 +3,11 @@ import { AppHeader } from './components/app-header/app-header';
 import { BeerItemList } from './components/beer-item-list/beer-item-list';
 import { BEER_LIST } from './const/beer.const';
 import { BeerItem } from './models/beer-item.model';
+import { AppFooter } from './components/app-footer/app-footer';
 
 @Component({
     selector: 'app-root',
-    imports: [AppHeader, BeerItemList],
+    imports: [AppFooter, AppHeader, BeerItemList],
     templateUrl: './app.html',
     styleUrl: './app.css'
 })

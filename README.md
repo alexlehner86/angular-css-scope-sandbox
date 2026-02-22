@@ -5,6 +5,31 @@ CSS scoping feature [@scope](https://developer.mozilla.org/en-US/docs/Web/CSS/Re
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
 
+## Bundle Size Findings
+
+The production build for both example application are roughly the same size:
+- *app-with-css-scope*: The `main.js` file has about 114 kB raw size
+- *app-without-css-scope*: The `main.js` file has about 113 kB raw size
+
+In an Angular application using View Encapsulation, the JavaScript code for components includes CSS definitions with the generated `[_nghost-xxx]` and `[_ngcontent-xxx]` attribute selectors. These represent additional characters that increase the file size. Example:
+
+```
+styles: [
+    '[_nghost-%COMP%]{display:block}header[_ngcontent-%COMP%]{background-color:var(--light-black);...'
+],
+```
+
+On the other hand, an Angular application using native CSS @scope, the JavaScript code for components includes CSS definitions without the View Encapsulation attribute selectors. But, of course, the CSS definitions include the @scope specific code. Example:
+```
+styles: [
+    '@scope (app-header){:scope{display:block}header{background-color:var(--light-black);...'
+],
+```
+
+Also, our `AppComponentDirective` and its inclusion with `hostDirectives: [AppComponentDirective],` also slightly increases the bundle size.
+
+All in all, I expect an application using CSS @scope instead of View Encapsulation to scale better with more components and CSS definitions. In the end, a middle to large application with CSS @scope should have a smaller bundle size compared to the same application using Angular's View Encapsulation instead.
+
 ## Development server
 
 To start a local development server, run:

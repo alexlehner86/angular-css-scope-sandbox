@@ -1,0 +1,23 @@
+:host {
+    display: block;
+}
+
+footer {
+    display: grid;
+    place-content: center;
+    background-color: var(--light-black);
+    padding: 1rem;
+}
+
+ul {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a[href] {
+    color: white;
+    font-size: 0.938rem;
+}
