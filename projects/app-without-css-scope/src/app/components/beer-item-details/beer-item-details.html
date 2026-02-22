@@ -1,0 +1,20 @@
+<hgroup>
+    <h2>{{item().name}}</h2>
+    <p>{{item().tagline}}</p>
+</hgroup>
+<div class="flex-row">
+    <div class="description">
+        <p>{{item().description}}</p>
+        <p class="info-item">
+            🍺&nbsp;<span>Alcohol by Volume: </span>
+            {{item().abv}}%
+        </p>
+        @for (food of item().foodPairing; track food) {
+            <p class="info-item">
+                🍴&nbsp;<span>Food Pairing: </span>
+                {{food}}
+            </p>
+        }
+    </div>
+    <img src="/img/beer-bottle.png" alt="" />
+</div>

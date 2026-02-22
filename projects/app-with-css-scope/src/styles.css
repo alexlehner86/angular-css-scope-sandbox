@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --canvas-bg-color: #fbfcfc;
+    --primary-color: #f0b111;
+    --primary-color-dark: #bd8a0a;
+    --light-black: #282c34;
+    --text-color: #1c2833;
+    --default-padding: 1rem;
+    --switch-font-size: 1.1rem;
+}

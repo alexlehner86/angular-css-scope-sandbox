@@ -57,10 +57,12 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "app-with-css-scope:build:production"
+              "buildTarget": "app-with-css-scope:build:production",
+              "port": 4201
             },
             "development": {
-              "buildTarget": "app-with-css-scope:build:development"
+              "buildTarget": "app-with-css-scope:build:development",
+              "port": 4201
             }
           },
           "defaultConfiguration": "development"
@@ -120,10 +122,12 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "app-without-css-scope:build:production"
+              "buildTarget": "app-without-css-scope:build:production",
+              "port": 4202
             },
             "development": {
-              "buildTarget": "app-without-css-scope:build:development"
+              "buildTarget": "app-without-css-scope:build:development",
+              "port": 4202
             }
           },
           "defaultConfiguration": "development"
