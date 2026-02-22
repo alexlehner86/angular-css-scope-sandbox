@@ -1,4 +1,7 @@
-# AngularCssScopeSandbox
+# Angular and CSS Scope Best Practices
+
+In this repo, I compare an Angular application using the standard view encapsulation with an application that uses the modern
+CSS scoping feature [@scope](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@scope) instead.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
 

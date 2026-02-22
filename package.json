@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "start:with-scope": "ng serve app-with-css-scope",
+    "start:without-scope": "ng serve app-without-css-scope",
+    "build:with-scope": "ng build app-with-css-scope",
+    "build:without-scope": "ng build app-without-css-scope",
     "test": "ng test"
   },
   "prettier": {
@@ -33,8 +34,11 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular/build": "^21.1.4",
     "@angular/cli": "^21.1.4",
     "@angular/compiler-cli": "^21.1.0",
-    "typescript": "~5.9.2"
+    "jsdom": "^27.1.0",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
   }
 }

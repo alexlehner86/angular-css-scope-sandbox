@@ -21,5 +21,19 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/app-with-css-scope/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/app-with-css-scope/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/app-without-css-scope/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/app-without-css-scope/tsconfig.spec.json"
+    }
+  ]
 }
