@@ -7,6 +7,8 @@
     "start:without-scope": "ng serve app-without-css-scope",
     "build:with-scope": "ng build app-with-css-scope",
     "build:without-scope": "ng build app-without-css-scope",
+    "predeploy": "ng build app-with-css-scope --base-href /angular-css-scope-sandbox/",
+    "deploy": "angular-cli-ghpages --dir=dist/app-with-css-scope",
     "test": "ng test"
   },
   "prettier": {
@@ -37,6 +39,7 @@
     "@angular/build": "^21.1.4",
     "@angular/cli": "^21.1.4",
     "@angular/compiler-cli": "^21.1.0",
+    "angular-cli-ghpages": "^3.0.2",
     "jsdom": "^27.1.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"

@@ -19,6 +19,10 @@
           "options": {
             "browser": "projects/app-with-css-scope/src/main.ts",
             "tsConfig": "projects/app-with-css-scope/tsconfig.app.json",
+            "outputPath": {
+              "base": "dist/app-with-css-scope",
+              "browser": ""
+            },
             "assets": [
               {
                 "glob": "**/*",
