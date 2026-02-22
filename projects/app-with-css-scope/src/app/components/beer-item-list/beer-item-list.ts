@@ -1,7 +1,7 @@
 import { Component, input, ViewEncapsulation } from '@angular/core';
 import { BeerItem } from '../../models/beer-item.model';
 import { BeerItemDetails } from '../beer-item-details/beer-item-details';
-import { AppComponentDirective } from '../../directives/app-component.directive';
+import { CustomNgHostDirective } from '../../directives/ng-host.directive';
 
 @Component({
     selector: 'app-beer-item-list',
@@ -9,7 +9,7 @@ import { AppComponentDirective } from '../../directives/app-component.directive'
     templateUrl: './beer-item-list.html',
     styleUrl: './beer-item-list.css',
     encapsulation: ViewEncapsulation.None,
-    hostDirectives: [AppComponentDirective],
+    hostDirectives: [CustomNgHostDirective],
     host: {
         role: "list",
     }

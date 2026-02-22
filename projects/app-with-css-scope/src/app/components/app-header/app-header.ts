@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { AppComponentDirective } from '../../directives/app-component.directive';
+import { CustomNgHostDirective } from '../../directives/ng-host.directive';
 
 @Component({
     selector: 'app-header',
@@ -7,6 +7,6 @@ import { AppComponentDirective } from '../../directives/app-component.directive'
     templateUrl: './app-header.html',
     styleUrl: './app-header.css',
     encapsulation: ViewEncapsulation.None,
-    hostDirectives: [AppComponentDirective],
+    hostDirectives: [CustomNgHostDirective],
 })
 export class AppHeader {}

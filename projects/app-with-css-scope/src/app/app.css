@@ -1,4 +1,4 @@
-@scope (app-root) to ([data-app-component] > *) {
+@scope (app-root) to ([data-ng-host] > *) {
     div.attribution {
         display: grid;
         place-content: center;

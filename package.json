@@ -1,6 +1,6 @@
 {
   "name": "angular-css-scope-sandbox",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start:with-scope": "ng serve app-with-css-scope",

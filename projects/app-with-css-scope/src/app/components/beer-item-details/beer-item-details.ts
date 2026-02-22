@@ -1,6 +1,6 @@
 import { Component, input, ViewEncapsulation } from '@angular/core';
 import { BeerItem } from '../../models/beer-item.model';
-import { AppComponentDirective } from '../../directives/app-component.directive';
+import { CustomNgHostDirective } from '../../directives/ng-host.directive';
 
 @Component({
     selector: 'app-beer-item-details',
@@ -8,7 +8,7 @@ import { AppComponentDirective } from '../../directives/app-component.directive'
     templateUrl: './beer-item-details.html',
     styleUrl: './beer-item-details.css',
     encapsulation: ViewEncapsulation.None,
-    hostDirectives: [AppComponentDirective],
+    hostDirectives: [CustomNgHostDirective],
 })
 export class BeerItemDetails {
     /**

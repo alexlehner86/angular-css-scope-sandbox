@@ -1,4 +1,4 @@
-@scope (app-beer-item-list) to ([data-app-component] > *) {
+@scope (app-beer-item-list) to ([data-ng-host] > *) {
     :scope {
         display: grid;
         gap: 2.5rem;

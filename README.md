@@ -9,14 +9,14 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Efficient use of CSS @scope
 
-The project `app-with-css-scope` includes the custom directive `AppComponentDirective`. When applied to a component, the directive adds the custom attribute `data-app-component` to the component's container HTML element. This attribute allows for efficient definition of the lower bounds of a CSS scope definition.
+The project `app-with-css-scope` includes the custom directive `CustomNgHostDirective`. When applied to a component, the directive adds the custom attribute `data-ng-host` to the component's container HTML element. This attribute allows for efficient definition of the lower bounds of a CSS scope definition.
 
 For example, the component `BeerItemList` applies the directive using the `hostDirectives` property of the component decorator:
 
 ```
 @Component({
     selector: 'app-beer-item-list',
-    hostDirectives: [AppComponentDirective],
+    hostDirectives: [CustomNgHostDirective],
     ...
 })
 export class BeerItemList { ... }
@@ -25,12 +25,12 @@ export class BeerItemList { ... }
 The app component includes the `BeerItemList` and other components in its template. To ensure that the styles for the app component don't affect its child components, we define the CSS scope the following way:
 
 ```
-@scope (app-root) to ([data-app-component] > *) {
+@scope (app-root) to ([data-ng-host] > *) {
     ...
 }
 ```
 
-This enables us to style the app component's content, including the container elements of the child components like `<app-beer-item-list>`. But the content of the child components are excluded via the scope's lower bound definition `[data-app-component] > *`.
+This enables us to style the app component's content, including the container elements of the child components like `<app-beer-item-list>`. But the content of the child components are excluded via the scope's lower bound definition `[data-ng-host] > *`.
 
 ## Bundle Size Findings
 
@@ -47,13 +47,14 @@ styles: [
 ```
 
 The JavaScript code of an Angular application using native CSS scoping doesn't include these attribute selectors. Instead, the CSS definitions include the @scope rule. Example:
+
 ```
 styles: [
     '@scope (app-header){:scope{display:block}header{background-color:var(--light-black);...'
 ],
 ```
 
-Futhermore, the `AppComponentDirective` and its inclusion with `hostDirectives: [AppComponentDirective],` also slightly increases the bundle size.
+Futhermore, the `CustomNgHostDirective` and its inclusion with `hostDirectives: [CustomNgHostDirective],` also slightly increases the bundle size.
 
 All in all, I expect an application using CSS @scope instead of View Encapsulation to scale better with more components and CSS definitions. In the end, a middle to large application with CSS @scope should have a smaller bundle size compared to the same application using Angular's View Encapsulation instead.
 

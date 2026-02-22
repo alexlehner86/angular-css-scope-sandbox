@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { AppComponentDirective } from '../../directives/app-component.directive';
+import { CustomNgHostDirective } from '../../directives/ng-host.directive';
 
 @Component({
     selector: 'app-footer',
@@ -7,6 +7,6 @@ import { AppComponentDirective } from '../../directives/app-component.directive'
     templateUrl: './app-footer.html',
     styleUrl: './app-footer.css',
     encapsulation: ViewEncapsulation.None,
-    hostDirectives: [AppComponentDirective],
+    hostDirectives: [CustomNgHostDirective],
 })
 export class AppFooter {}
