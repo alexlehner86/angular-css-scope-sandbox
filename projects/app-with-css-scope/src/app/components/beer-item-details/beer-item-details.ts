@@ -1,11 +1,14 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ViewEncapsulation } from '@angular/core';
 import { BeerItem } from '../../models/beer-item.model';
+import { AppComponentDirective } from '../../directives/app-component.directive';
 
 @Component({
     selector: 'app-beer-item-details',
     imports: [],
     templateUrl: './beer-item-details.html',
     styleUrl: './beer-item-details.css',
+    encapsulation: ViewEncapsulation.None,
+    hostDirectives: [AppComponentDirective],
 })
 export class BeerItemDetails {
     /**

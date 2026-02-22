@@ -1,7 +1,3 @@
-:host {
-    display: block;
-}
-
 hgroup {
     border-bottom: 0.125rem solid black;
     /* CSS variables for background colors are set by the parent component */
